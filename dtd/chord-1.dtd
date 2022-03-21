@@ -1,0 +1,29 @@
+<!--
+    This is the Chord 1.0 Document Type Definition, which belongs to the Chords specification.
+
+    The Chord 1.0 specification includes additional constraints that cannot be expressed within the DTD.
+
+    Further information about Chords is available at:
+      https://chords.jaburjak.cz
+
+    Author:
+      Jakub Jaburek <jaburek.jakub@gmail.com>
+
+    Copyright (c) 2022 Jakub Jaburek. All rights reserved.
+-->
+
+<!ELEMENT chord (name, def)>
+
+<!ELEMENT name (#PCDATA)>
+
+<!ELEMENT def (((def-strings, def-frets) | (def-frets, def-strings)), (def-note | def-mark)*)>
+<!ELEMENT def-strings (#PCDATA)>
+<!ELEMENT def-frets (#PCDATA)>
+
+<!ELEMENT def-note ((note-string, note-fret) | (note-fret, note-string))>
+<!ELEMENT note-string (#PCDATA)>
+<!ELEMENT note-fret (#PCDATA)>
+
+<!ELEMENT def-mark ((mark-string, mark-type) | (mark-type, mark-string))>
+<!ELEMENT mark-string (#PCDATA)>
+<!ELEMENT mark-type (#PCDATA)>
